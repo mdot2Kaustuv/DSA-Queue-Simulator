@@ -1,11 +1,12 @@
-from collections import deque
-from dataclasses import dataclass
 
-@dataclass
 class Vehicle :
-    id : int
-    time : float
-    lane : str
+    def __init__ (self,id,lane,time) :
+        self.id = id
+        self.lane = lane
+        self.time = time
+
+    def __str__ (self) :
+        return f'{self.id} {self.lane} {self.time}'
 
 
 class queue :
@@ -30,5 +31,41 @@ class queue :
 
     def size(self):
         return len(self.queue)
+
+class lane :
+    def __init__(self):
+        self.lanes ={}
+        for k in ["A","B","C","D"]:
+            self.lanes[k]= queue()
+            self.priority = False
+
+
+    def enqueue(self,Vehicle,road :str):
+        self.lanes[road].enqueue(Vehicle)
+
+    def dequeue(self,road :str ):
+        if self.lanes[road].is_empty() :
+            raise KeyError
+        self.lanes[road].dequeue()
+
+    def size(self,road : str ):
+        return self.lanes[road].size()
+
+    def is_empty(self,road : str ):
+        return self.lanes[road].is_empty()
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
 
