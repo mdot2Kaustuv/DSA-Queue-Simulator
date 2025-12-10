@@ -1,0 +1,28 @@
+import time
+from queue import Vehicle , lane
+
+data_file = "Traffic.data"
+
+highpriority = 10
+lowpriority = 5
+
+def read_data() :
+    with open(data_file, "r") as f:
+        lines = [line.strip() for line in f if line.strip()]
+    open(data_file, "w").close()
+    return lines
+
+def convert_to_object(line):
+    id , road , time = line.split(",")
+    return Vehicle(id, road , time)
+
+def normal_vehicles(Lane) :
+    total_vehicles = lane.size("A") + lane.size("B") + lane.size("C")
+    avg = total_vehicles / 3
+    return avg
+
+def simulation() :
+    lm = lane()
+
+
+

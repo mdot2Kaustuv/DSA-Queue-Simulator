@@ -40,18 +40,18 @@ class lane :
             self.priority = False
 
 
-    def enqueue(self,Vehicle,road :str):
+    def enqueue(self,Vehicle,road):
         self.lanes[road].enqueue(Vehicle)
 
-    def dequeue(self,road :str ):
+    def dequeue(self,road):
         if self.lanes[road].is_empty() :
             raise KeyError
         self.lanes[road].dequeue()
 
-    def size(self,road : str ):
+    def size(self,road):
         return self.lanes[road].size()
 
-    def is_empty(self,road : str ):
+    def is_empty(self,road):
         return self.lanes[road].is_empty()
 
     
