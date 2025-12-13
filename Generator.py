@@ -1,10 +1,10 @@
 import random
-from queue import Vehicle
+from Vehicles import Vehicle
 import time
 
 data_file = "Traffic.data"
-LANES = ["A","B","C"]
-road = ["W","X","Y","Z"]
+LANES = ["1","2","3"]
+road = ["A","B","C","D"]
 
 def record (Vehicle) :
     with open(data_file, "a") as file:
