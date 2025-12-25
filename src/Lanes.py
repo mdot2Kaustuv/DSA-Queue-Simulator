@@ -1,5 +1,3 @@
-from Queues import Queues
-from Vehicles import Vehicle
 from Roads import Road
 
 class LaneManager:

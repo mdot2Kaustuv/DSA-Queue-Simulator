@@ -11,31 +11,25 @@ direction = ["Straight","Left"]
 
 def record (Vehicle) :
     with open(data_file, "a") as file:
-        file.write(f"{Vehicle.id},{Vehicle.lane},{Vehicle.road},{Vehicle.time},{Vehicle.direction}\n")
+        file.write(f"{Vehicle.id},{Vehicle.lane},{Vehicle.road},{Vehicle.time}\n")
 
 def generate_vehicle (delay =2.0):
+    vehicle_road = random.choice(road)
+    vehicle_lane = random.choice(LANES)
+    vehicle_id = random.randint(1,10000)
+    interval = random.expovariate(1.0 / delay)
+    time.sleep(interval)
+    return Vehicle(vehicle_id,vehicle_lane,vehicle_road,time.time())
 
-        vehicle_road = random.choice(road)
-        vehicle_lane = random.choice(LANES)
-        vehicle_id = random.randint(1,10000)
-        interval = random.expovariate(1.0 / delay)
-        time.sleep(interval)
-
-        if vehicle_lane == 2 :
-            return Vehicle(vehicle_id, vehicle_lane, vehicle_road,time.time(),random.choice(direction))
-        elif vehicle_lane == 3 :
-            return Vehicle(vehicle_id, vehicle_lane, vehicle_road,time.time(),"Left")
-        else :
-            return Vehicle(vehicle_id, vehicle_lane, vehicle_road,time.time(),"None")
 
 
 def generator():
-        v=generate_vehicle()
-        record(v)
-        lm.enqueue(v.road,v.lane,v)
+        while True:
+            v=generate_vehicle()
+            record(v)
+            lm.enqueue(v.road,v.lane,v)
 
-if __name__ == "__main__":
-    generator()
+generator()
 
 
 

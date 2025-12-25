@@ -4,7 +4,7 @@ class Road:
         self.road = road_id
         self.lanes = {
             1 : Queues() ,
-            2 : Queues() ,
+            2 : Queues(),
             3 : Queues()
         }
 
