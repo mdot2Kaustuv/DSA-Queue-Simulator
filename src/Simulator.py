@@ -22,7 +22,7 @@ COLOR_ORANGE = (255, 165, 0)
 
 pygame.init()
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
-pygame.display.set_caption("Traffic Simulation (Fixed Timings)")
+pygame.display.set_caption("Traffic Simulation")
 font = pygame.font.SysFont('Arial', 16, bold=True)
 
 
@@ -244,9 +244,6 @@ def main():
         draw_env(screen, controller)
         for v in visual_vehicles:
             v.draw(screen)
-
-        info_txt = font.render(f"Vehicles: {len(visual_vehicles)}", True, COLOR_WHITE)
-        screen.blit(info_txt, (10, 10))
 
         pygame.display.flip()
 
