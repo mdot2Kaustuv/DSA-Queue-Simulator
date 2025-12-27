@@ -43,21 +43,21 @@ The system follows a Producer-Consumer pattern. The Generator produces vehicle d
 
 - Traffic Generation:Using a producer-consumer architecture, Generator.py simulates varying traffic loads by writing vehicle data to Traffic.data, which the simulator then polls to update internal lane queues.
 
-##Installation and Prerequisites
+## Installation and Prerequisites
 This project requires Python 3.13 to run smoothly and as intended. You will also need to install the external library Pygame for visualization.
 
-1. Install Dependencies
+- Install Dependencies
 Pygame is the only external dependency required. Open your terminal or command prompt and run:
 
 ```bash
 pip install pygame
 ```
 
-2. Setup
+- Setup
 Clone the repository:
 
 ```bash
-git clone https://github.com/pxrbat/traffic-light-simulation-dsa.git
+git clone https://github.com/mdot2Kaustuv/DSA-Queue-Simulator
 ```
 
 Ensure your folder format looks like this:
