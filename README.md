@@ -31,33 +31,35 @@ Queues.py, Lanes.py, & Roads.py: Implements the linear logic where vehicles ente
 
 Simulator.py: Integrates these components using Pygame to visually render the junction, manage traffic light states (Red/Green), and ensure safety by preventing deadlocks through strict state management.
 
-Features
-Intelligent Priority Management: The system actively monitors the queue length of Lane AL2. When congestion exceeds 10 vehicles, it activates a "Priority Mode" that overrides standard cycles to grant a continuous green light until the lane count is reduced to 5 or fewer.
+##Features
+##Intelligent Priority Management:## The system actively monitors the queue length of Lane AL2. When congestion exceeds 10 vehicles, it activates a "Priority Mode" that overrides standard cycles to grant a continuous green light until the lane count is reduced to 5 or fewer.
 
-Left-Hand Traffic (LHT) Standard: The simulation is designed to follow LHT protocols, which are the standard driving rules in regions like Nepal and the UK.
+##Left-Hand Traffic (LHT) Standard:## The simulation is designed to follow LHT protocols, which are the standard driving rules in regions like Nepal and the UK.
 
-Real-Time Graphical Visualization: Utilizing Pygame, the simulator.py script provides a high-fidelity visualization featuring animated vehicle movement, realistic lane markings, and glowing traffic light indicators.
+##Real-Time Graphical Visualization:## Utilizing Pygame, the simulator.py script provides a high-fidelity visualization featuring animated vehicle movement, realistic lane markings, and glowing traffic light indicators.
 
-Traffic Generation: Using a producer-consumer architecture, Generator.py simulates varying traffic loads by writing vehicle data to Traffic.data, which the simulator then polls to update internal lane queues.
+##Traffic Generation:## Using a producer-consumer architecture, Generator.py simulates varying traffic loads by writing vehicle data to Traffic.data, which the simulator then polls to update internal lane queues.
 
-Installation and Prerequisites
+##Installation and Prerequisites
 This project requires Python 3.13 to run smoothly and as intended. You will also need to install the external library Pygame for visualization.
 
 1. Install Dependencies
 Pygame is the only external dependency required. Open your terminal or command prompt and run:
 
-Bash
-
+```bash
 pip install pygame
+```
+
 2. Setup
 Clone the repository:
 
-Bash
-
+```bash
 git clone https://github.com/pxrbat/traffic-light-simulation-dsa.git
+```
+
 Ensure your folder format looks like this:
 
-Plaintext
+
 
 /DSA-Queue-Simulator/
 ├── src/
@@ -72,26 +74,30 @@ Plaintext
 ├── .gitignore
 ├── README.md
 └── Simulator.mp4
-Execution Instructions
+
+## Execution Instructions
 After cloning the repository, access the directory:
 
-Bash
 
+```bash
 cd traffic-light-simulation-dsa
+```
 If you have an IDE, you can directly run the project by opening Simulator.py. Otherwise, use the command line:
 
 Starting Generator.py:
 
-Bash
-
+```bash
 python src/Generator.py
+```
+
 Example Output: 2480,2,C,1766727594.3392065
 
 (This window can be kept open or closed as Simulator.py will automatically run it.)
 
 Starting the Simulator:
 
-Bash
-
+```bash
 python src/Simulator.py
+```
+
 Output: A Pygame window with the simulation.
