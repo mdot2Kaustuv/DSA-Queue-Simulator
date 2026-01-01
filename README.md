@@ -33,10 +33,15 @@ Instead of using fixed timers like normal traffic lights, this project uses **Qu
 **Real-world use**: This is how modern smart traffic lights work in big cities!
 
 ---
+## Simulator Demo
 
-## Output Demo
++[Simulator Demo] (https://raw
 
-![Traffic Simulation](output_screenshot_placeholder)
+.githubusercontent.com/mdot2Kaustuv/DSA
+
+-Queue-Simulator/main/Simulator.mp4
+
+)
 
 
 The simulation shows:
